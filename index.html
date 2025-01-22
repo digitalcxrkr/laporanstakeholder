@@ -95,12 +95,12 @@
     <form id="submissionForm">
         
         <!-- manajemen (GM S.D. MUP), working level (ASMAN MULP PAE)-->
-        <label for="levelProbing">Level Probing:</label>
+        <label for="levelProbing">Level Probing :</label>
         <select id="levelProbing" name="levelProbing" required>
             <option value="" disabled selected>Pilih Level Probing</option>
-            <option value="Manajemen - GM">Manajemen GM</option>
-            <option value="Manajemen - SRM">Manajemen SRM</option>
-            <option value="Manajemen - MUP3">Manajemen MUP3</option>
+            <option value="Manajemen - GM">Manajemen - GM</option>
+            <option value="Manajemen - SRM">Manajemen - SRM</option>
+            <option value="Manajemen - MUP3">Manajemen - MUP3</option>
             <option value="Manajemen - MSB">Manajemen - MSB</option>
             <option value="Working Level - ASMAN NIAGA DAN SAR">Working Level - ASMAN NIAGA DAN SAR</option>
             <option value="Working Level - PAE UID">Working Level - PAE UID</option>
@@ -114,7 +114,7 @@
         <!-- Dropdown dari UID, 5 UP3, 34 ULP UNIT ULP -->
         <!-- LOKASI -->
         
-        <label for="unit">Unit:</label>
+        <label for="unit">Unit :</label>
         <select id="unit" name="unit" required>
             <option value="" disabled selected>Pilih Unit</option>
             <option value="UID">Unit Induk Distribusi</option>
@@ -130,15 +130,16 @@
             <option value="ULP Panam">ULP Panam</option>
             <option value="ULP Perawang">ULP Perawang</option>
             <option value="ULP Siak Sri Indrapura">ULP Siak Sri Indrapura</option>
+            <option value="ULP Pangkalan Kerinci">ULP Pangkalan Kerinci</option>
             <option value="ULP Duri">ULP Duri</option>
             <option value="ULP Bagan Siapi-api">ULP Bagan Siapi-api</option>
             <option value="ULP Bengkalis">ULP Bengkalis</option>
-            <option value="ULP Selatpanjang">ULP Selatpanjang</option>
+            <option value="ULP Selatpanjang">ULP Selat Panjang</option>
             <option value="ULP Dumai Kota">ULP Dumai Kota</option>
             <option value="ULP Bagan Batu">ULP Bagan Batu</option>
             <option value="ULP Bintan Center">ULP Bintan Center</option>
             <option value="ULP Kijang">ULP Kijang</option>
-            <option value="ULP Tanjung Uban">ULPTanjung Uban</option>
+            <option value="ULP Tanjung Uban">ULP Tanjung Uban</option>
             <option value="ULP Belakang Padang">ULP Belakang Padang</option>
             <option value="ULP Tanjung Balai Karimun">ULP Tanjung Balai Karimun</option>
             <option value="ULP Tanjung Batu">ULP Tanjung Batu</option>
@@ -158,26 +159,28 @@
             <option value="ULP Ujung Batu">ULP Ujung Batu</option>
         </select>
 
-        <label for="lokasi">Lokasi:</label>
+        <label for="lokasi">Lokasi :</label>
         <input type="text" id="lokasi" name="lokasi" required>
 
-        <label for="tglKunjungan">Tanggal Kunjungan:</label>
+        <label for="tglKunjungan">Tanggal Kunjungan :</label>
         <input type="date" id="tglKunjungan" name="tglKunjungan" required>
 
         <!-- kunjungan - komplain, kunjungan - profiling, selebrasi- Mou, selebrasi - PJBTL, selebrasi - energize  -->
-        <label for="tujuan">Tujuan:</label>
+        <label for="tujuan">Tujuan :</label>
         <select id="tujuan" name="tujuan" required>
             <option value="" disabled selected>Pilih Tujuan</option>
+            <option value="Kunjungan - Probing">Kunjungan - Probing</option>
             <option value="Kunjungan - Komplain">Kunjungan - Komplain</option>
-            <option value="Kunjungan - Profiling">Kunjungan - Profiling</option>
-            <option value="Selebrasi- MoU">Selebrasi- MoU</option>
+            <option value="Kunjungan - Profiling TM">Kunjungan - Profiling TM</option>
+            <option value="Kunjungan - Profiling TT">Kunjungan - Profiling TT</option>
+            <option value="Selebrasi - MoU">Selebrasi - MoU</option>
             <option value="Selebrasi - PJBTL">Selebrasi - PJBTL</option>
-            <option value="Selebrasi- Energize">Selebrasi- Energize</option>
+            <option value="Selebrasi - Energize">Selebrasi - Energize</option>
         </select>
 
                 
         <div id="options-container">
-            <label for="plg">Peserta Pelanggan:</label>
+            <label for="plg">Peserta Pelanggan :</label>
             <div class="option">
                 <input type="text" placeholder="Jabatan">
                 <input type="text" placeholder="Nama Peserta">
@@ -188,13 +191,20 @@
 
         
         <div id="options-container-pln">
-            <label for="pln">Peserta PLN:</label>
+            <label for="pln">Peserta PLN :</label>
             <div class="option">
                 <select>
                 <option value="" disabled selected>Pilih Jabatan</option>
+                <option value="GM">GM</option>
+                <option value="SRM">SRM</option>
+                <option value="MUP3">MUP3</option>
                 <option value="MSB">MSB</option>
                 <option value="ASMAN">ASMAN</option>
-                <option value="PAE">PAE</option>
+                <option value="PAE UID">PAE UID</option>
+                <option value="PAE UP3">PAE UP3</option>
+                <option value="MULP">MULP</option>
+                <option value="TL">TL</option>
+                <option value="LAINNYA">LAINNYA</option>
                 </select>
                 <input type="text" placeholder="Nama Peserta">
                 <button type="button" onclick="removeOption(this)">X</button>
@@ -203,20 +213,20 @@
         <button id="add-option-pln" type="button">Add Option</button>
 
         <div id="issue-container">
-            <label for="isu">Isu utama yang diangkat:</label>
+            <label for="isu">Isu utama yang diangkat :</label>
             <textarea id="isu" name="isu" required></textarea>
         </div>
         
-        <label for="pembahasan">Pembahasan:</label>
+        <label for="pembahasan">Pembahasan :</label>
         <textarea id="pembahasan" name="pembahasan" required></textarea>
 
-        <label for="solusi">Potensi solusi:</label>
+        <label for="solusi">Potensi solusi :</label>
         <textarea id="solusi" name="solusi" required></textarea>
 
-        <label for="rencanaTL">Rencana tindaklanjut:</label>
+        <label for="rencanaTL">Rencana tindaklanjut :</label>
         <textarea id="rencanaTL" name="rencanaTL" required></textarea>
 
-        <label for="status">Status:</label>
+        <label for="status">Status :</label>
         <select id="status" name="status" required>
             <option value="" disabled selected>Select Laporan</option>
             <option value="followup">Butuh Tindaklanjut</option>
@@ -228,7 +238,7 @@
             <input type="date" id="followupDate" name="followupDate">
         </div>
 
-        <label for="photo">Upload Photo:</label>
+        <label for="photo">Upload Photo :</label>
         <input type="file" id="photo" name="photo" accept="image/*" required>
 
         <!-- Tempat untuk preview foto -->
