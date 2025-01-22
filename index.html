@@ -372,8 +372,8 @@
                 optionsPlg.forEach(option => {
                     const jabatanPlg = option.querySelector("input[placeholder='Jabatan']").value; // Ambil nilai dropdown
                     const namaPesertaPlg = option.querySelector("input[placeholder='Nama Peserta']").value; // Ambil nilai input teks
-                    if (jabatan && namaPeserta) {
-                        pesertaPLN.push(`${jabatan} ${namaPeserta}`);
+                    if (jabatanPlg && namaPesertaPlg) {
+                        pesertaPlg.push(`${jabatanPlg} ${namaPesertaPlg}`);
                     }
                 });
                 const pesertaPlgString = pesertaPLN.join(', ');
