@@ -48,6 +48,10 @@
         align-items: center;
         
         }
+        .option input, .option input[type="text"] {
+        margin-right: 10px;
+        padding: 5px;
+        }
         .option select, .option input[type="text"] {
         margin-right: 10px;
         padding: 5px;
@@ -73,6 +77,17 @@
         #add-option:hover {
         background-color: #45a049;
         }
+        #add-option-pln {
+        margin-bottom: 20px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+        }
+        #add-option-pln:hover {
+        background-color: #45a049;
+        }
     </style>
 </head>
 <body>
@@ -83,8 +98,14 @@
         <label for="levelProbing">Level Probing:</label>
         <select id="levelProbing" name="levelProbing" required>
             <option value="" disabled selected>Pilih Level Probing</option>
-            <option value="Manajemen (GM, SRM, MUP3)">Manajemen (GM, SRM, MUP3)</option>
-            <option value="Working Level (ASMAN, MULP, PAE)">Working Level (ASMAN, MULP, PAE)</option>
+            <option value="Manajemen - GM">Manajemen GM</option>
+            <option value="Manajemen - SRM">Manajemen SRM</option>
+            <option value="Manajemen - MUP3">Manajemen MUP3</option>
+            <option value="Manajemen - MSB">Manajemen - MSB</option>
+            <option value="Working Level - ASMAN NIAGA DAN SAR">Working Level - ASMAN NIAGA DAN SAR</option>
+            <option value="Working Level - PAE UID">Working Level - PAE UID</option>
+            <option value="Working Level - PAE UP3">Working Level - PAE UP3</option>
+            <option value="Working Level - MULP">Working Level - MULP</option>
         </select>
 
 
@@ -107,6 +128,34 @@
             <option value="ULP Simpang Tiga">ULP Simpang Tiga</option>
             <option value="ULP Rumbai">ULP Rumbai</option>
             <option value="ULP Panam">ULP Panam</option>
+            <option value="ULP Perawang">ULP Perawang</option>
+            <option value="ULP Siak Sri Indrapura">ULP Siak Sri Indrapura</option>
+            <option value="ULP Duri">ULP Duri</option>
+            <option value="ULP Bagan Siapi-api">ULP Bagan Siapi-api</option>
+            <option value="ULP Bengkalis">ULP Bengkalis</option>
+            <option value="ULP Selatpanjang">ULP Selatpanjang</option>
+            <option value="ULP Dumai Kota">ULP Dumai Kota</option>
+            <option value="ULP Bagan Batu">ULP Bagan Batu</option>
+            <option value="ULP Bintan Center">ULP Bintan Center</option>
+            <option value="ULP Kijang">ULP Kijang</option>
+            <option value="ULP Tanjung Uban">ULPTanjung Uban</option>
+            <option value="ULP Belakang Padang">ULP Belakang Padang</option>
+            <option value="ULP Tanjung Balai Karimun">ULP Tanjung Balai Karimun</option>
+            <option value="ULP Tanjung Batu">ULP Tanjung Batu</option>
+            <option value="ULP Dabo Singkep">ULP Dabo Singkep</option>
+            <option value="ULP Natuna">ULP Natuna</option>
+            <option value="ULP Tanjungpinang Kota">ULP Tanjungpinang Kota</option>
+            <option value="ULP Anambas">ULP Anambas</option>
+            <option value="ULP Rengat Kota">ULP Rengat Kota</option>
+            <option value="ULP Taluk Kuantan">ULP Taluk Kuantan</option>
+            <option value="ULP Kuala Enok">ULP Kuala Enok</option>
+            <option value="ULP Tembilahan">ULP Tembilahan</option>
+            <option value="ULP Air Molek">ULP Air Molek</option>
+            <option value="ULP Bangkinang">ULP Bangkinang</option>
+            <option value="ULP Kampar">ULP Kampar</option>
+            <option value="ULP Lipat Kain">ULP Lipat Kain</option>
+            <option value="ULP Pasir Pangaraian">ULP Pasir Pangaraian</option>
+            <option value="ULP Ujung Batu">ULP Ujung Batu</option>
         </select>
 
         <label for="lokasi">Lokasi:</label>
@@ -127,11 +176,19 @@
         </select>
 
                 
-        <label for="plg">Peserta Pelanggan:</label>
-        <input type="text" id="plg" name="plg" required>
-
-        <label for="pln">Peserta PLN:</label>
         <div id="options-container">
+            <label for="plg">Peserta Pelanggan:</label>
+            <div class="option">
+                <input type="text" placeholder="Jabatan">
+                <input type="text" placeholder="Nama Peserta">
+                <button type="button" onclick="removeOption(this)">X</button>
+            </div>
+        </div>
+        <button id="add-option" type="button">Add Option</button>
+
+        
+        <div id="options-container-pln">
+            <label for="pln">Peserta PLN:</label>
             <div class="option">
                 <select>
                 <option value="" disabled selected>Pilih Jabatan</option>
@@ -143,7 +200,7 @@
                 <button type="button" onclick="removeOption(this)">X</button>
             </div>
         </div>
-        <button id="add-option" type="button">Add Option</button>
+        <button id="add-option-pln" type="button">Add Option</button>
 
         <div id="issue-container">
             <label for="isu">Isu utama yang diangkat:</label>
@@ -187,6 +244,8 @@
         const previewImage = document.getElementById('preview');
         const optionsContainer = document.getElementById('options-container');
         const addOptionButton = document.getElementById('add-option');
+        const optionsContainerPLN = document.getElementById('options-container-pln');
+        const addOptionButtonPLN = document.getElementById('add-option-pln');
 
         function removeOption(button) {
             button.parentElement.remove();
@@ -197,12 +256,7 @@
         const newOption = document.createElement('div');
         newOption.className = 'option';
         newOption.innerHTML = `
-            <select>
-                <option value="" disabled selected>Pilih Jabatan</option>
-                <option value="msb">MSB</option>
-                <option value="asman">ASMAN</option>
-                <option value="pae">PAE</option>
-            </select>
+            <input type="text" placeholder="Jabatan">
             <input type="text" placeholder="Nama Peserta">
             <button type="button" onclick="removeOption(this)">X</button>
         `;
@@ -211,6 +265,25 @@
 
         // Event listener untuk tombol Add Option
         addOptionButton.addEventListener('click', addOption);
+
+        function addOptionPLN() {
+        const newOption = document.createElement('div');
+        newOption.className = 'option';
+        newOption.innerHTML = `
+            <select>
+            <option value="" disabled selected>Pilih Jabatan</option>
+            <option value="MSB">MSB</option>
+            <option value="ASMAN">ASMAN</option>
+            <option value="PAE">PAE</option>
+            </select>
+            <input type="text" placeholder="Nama Peserta">
+            <button type="button" onclick="removeOption(this)">X</button>
+        `;
+        optionsContainerPLN.appendChild(newOption);
+        }
+
+        // Event listener untuk tombol Add Option
+        addOptionButtonPLN.addEventListener('click', addOptionPLN);
 
         laporanSelect.addEventListener('change', function(){
             if (this.value === 'followup') {
@@ -268,9 +341,21 @@
                 
 
                 const base64File = reader.result.split(',')[1]; // Ambil data Base64 tanpa prefix
-                const options = document.querySelectorAll("#options-container .option");
+                
+                const optionsPlg = document.querySelectorAll("#options-container .option");
+                const pesertaPlg = [];
+                optionsPlg.forEach(option => {
+                    const jabatanPlg = option.querySelector("input[placeholder='Jabatan']").value; // Ambil nilai dropdown
+                    const namaPesertaPlg = option.querySelector("input[placeholder='Nama Peserta']").value; // Ambil nilai input teks
+                    if (jabatan && namaPeserta) {
+                        pesertaPLN.push(`${jabatan} ${namaPeserta}`);
+                    }
+                });
+                const pesertaPlgString = pesertaPLN.join(', ');
+                
+                const optionsPLN = document.querySelectorAll("#options-container-pln .option");
                 const pesertaPLN = [];
-                options.forEach(option => {
+                optionsPLN.forEach(option => {
                     const jabatan = option.querySelector("select").value; // Ambil nilai dropdown
                     const namaPeserta = option.querySelector("input[type='text']").value; // Ambil nilai input teks
                     if (jabatan && namaPeserta) {
@@ -286,7 +371,7 @@
                     lokasi: formData.get('lokasi'),
                     tglKunjungan: tglKunjungan,
                     tujuan: formData.get('tujuan'),
-                    plg: formData.get('plg'),
+                    plg: pesertaPlgString,
                     pln: pesertaPLNString,
                     isu: formData.get('isu'),
                     pembahasan: formData.get('pembahasan'),
