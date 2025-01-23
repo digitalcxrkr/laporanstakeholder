@@ -293,11 +293,18 @@
         newOption.className = 'option';
         newOption.innerHTML = `
             <select>
-            <option value="" disabled selected>Pilih Jabatan</option>
-            <option value="MSB">MSB</option>
-            <option value="ASMAN">ASMAN</option>
-            <option value="PAE">PAE</option>
-            </select>
+                <option value="" disabled selected>Pilih Jabatan</option>
+                <option value="GM">GM</option>
+                <option value="SRM">SRM</option>
+                <option value="MUP3">MUP3</option>
+                <option value="MSB">MSB</option>
+                <option value="ASMAN">ASMAN</option>
+                <option value="PAE UID">PAE UID</option>
+                <option value="PAE UP3">PAE UP3</option>
+                <option value="MULP">MULP</option>
+                <option value="TL">TL</option>
+                <option value="LAINNYA">LAINNYA</option>
+                </select>
             <input type="text" placeholder="Nama Peserta">
             <button type="button" onclick="removeOption(this)">X</button>
         `;
@@ -388,6 +395,7 @@
 
                 // Tambahkan data file ke objek formData
                 const data = {
+                    stakeholder: formData.get('stakeholder'),
                     levelProbing: formData.get('levelProbing'),
                     unit: formData.get('unit'),
                     lokasi: formData.get('lokasi'),
