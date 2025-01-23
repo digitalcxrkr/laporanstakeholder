@@ -109,6 +109,9 @@
     </div>
     <form id="submissionForm">
         
+        <label for="stakeholder">Nama Stakeholder :</label>
+        <input type="text" id="stakeholder" name="stakeholder" required>
+
         <!-- manajemen (GM S.D. MUP), working level (ASMAN MULP PAE)-->
         <label for="levelProbing">Level Probing :</label>
         <select id="levelProbing" name="levelProbing" required>
@@ -122,12 +125,6 @@
             <option value="Working Level - PAE UP3">Working Level - PAE UP3</option>
             <option value="Working Level - MULP">Working Level - MULP</option>
         </select>
-
-
-        <!-- Google Maps API Script -->
-
-        <!-- Dropdown dari UID, 5 UP3, 34 ULP UNIT ULP -->
-        <!-- LOKASI -->
         
         <label for="unit">Unit :</label>
         <select id="unit" name="unit" required>
@@ -249,7 +246,7 @@
         </select>
 
         <div id="datePickerContainer" class="hidden">
-            <label for="followupDate">Pilih Tanggal Tindaklanjut :</label>
+            <label for="followupDate">Tanggal Rencana Tindaklanjut :</label>
             <input type="date" id="followupDate" name="followupDate">
         </div>
 
