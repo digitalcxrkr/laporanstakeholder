@@ -194,18 +194,18 @@
         <div id="options-container">
             <label for="plg">Peserta Pelanggan :</label>
             <div class="option">
-                <input type="text" placeholder="Jabatan">
-                <input type="text" placeholder="Nama Peserta">
+                <input type="text" placeholder="Jabatan" required>
+                <input type="text" placeholder="Nama Peserta" required>
                 <button type="button" onclick="removeOption(this)">X</button>
             </div>
         </div>
         <button id="add-option" type="button">Add Option</button>
 
         
-        <div id="options-container-pln">
+        <div id="options-container-pln" required>
             <label for="pln">Peserta PLN :</label>
             <div class="option">
-                <select>
+                <select required>
                 <option value="" disabled selected>Pilih Jabatan</option>
                 <option value="GM">GM</option>
                 <option value="SRM">SRM</option>
@@ -218,7 +218,7 @@
                 <option value="TL">TL</option>
                 <option value="LAINNYA">LAINNYA</option>
                 </select>
-                <input type="text" placeholder="Nama Peserta">
+                <input type="text" placeholder="Nama Peserta" required>
                 <button type="button" onclick="removeOption(this)">X</button>
             </div>
         </div>
