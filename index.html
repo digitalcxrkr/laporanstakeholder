@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Submission</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            max-width: 400px;
+            margin: auto;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .hidden {
+            display: none;
+        }
+        img {
+            display: block;
+            max-width: 100%;
+            max-height: 200px;
+            object-fit: contain;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .option {
+        display: flex;
+        align-items: center;
+        
+        }
+        .option input, .option input[type="text"] {
+        margin-right: 10px;
+        padding: 5px;
+        }
+        .option select, .option input[type="text"] {
+        margin-right: 10px;
+        padding: 5px;
+        }
+        .option button {
+        background-color: #ff4d4d;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+        }
+        .option button:hover {
+        background-color: #e60000;
+        }
+        #add-option {
+        margin-bottom: 20px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+        }
+        #add-option:hover {
+        background-color: #45a049;
+        }
+        #add-option-pln {
+        margin-bottom: 20px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+        }
+        #add-option-pln:hover {
+        background-color: #45a049;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            text-align: center; /* Tengah-tengah */
+        }
+
+        /* Gaya untuk paragraf */
+        p {
+            font-size: 16px;
+            line-height: 1.5; /* Spasi antar baris */
+            text-align: justify; /* Meratakan teks */
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>Laporan <em>Stakeholder Management for High Quality Growth</em> Tahun 2025</h2>
+        <p>Program ini merupakan inisiatif strategis untuk menciptakan sinergi yang lebih kuat antara PLN UIDRKR dengan para stakeholder khususnya institusi/badan usaha yang terkait dengan upaya meningkatkan pelayanan, menciptakan peluang pasar baru, menggali potensi penjualan dan pendapatan perusahaan.</p>
+    </div>
+    <form id="submissionForm">
+        
+        <label for="stakeholder">Nama Stakeholder :</label>
+        <input type="text" id="stakeholder" name="stakeholder" required>
+
+        <label for="sektor">Sektor :</label>
+        <select id="sektor" name="sektor" required>
+            <option value="" disabled selected>Pilih Sektor</option>
+            <option value="pemerintah">Pemerintah</option>
+            <option value="bisnis">Bisnis</option>
+            <option value="industri">Industri</option>
+            <option value="sosial">Sosial</option>
+            <option value="rumah tangga">Rumah Tangga</option>
+        </select>
+        <label for="pemkwh">History Pemakaian kWh (narasikan) :</label>
+        <input type="text" id="pemkwh" name="pemkwh" required>
+
+        <!-- manajemen (GM S.D. MUP), working level (ASMAN MULP PAE)-->
+        <label for="levelProbing">Level Probing :</label>
+        <select id="levelProbing" name="levelProbing" required>
+            <option value="" disabled selected>Pilih Level Probing</option>
+            <option value="Manajemen - GM">Manajemen - GM</option>
+            <option value="Manajemen - SRM">Manajemen - SRM</option>
+            <option value="Manajemen - MUP3">Manajemen - MUP3</option>
+            <option value="Manajemen - MSB">Manajemen - MSB</option>
+            <option value="Working Level - ASMAN NIAGA DAN SAR">Working Level - ASMAN NIAGA DAN SAR</option>
+            <option value="Working Level - PAE UID">Working Level - PAE UID</option>
+            <option value="Working Level - PAE UP3">Working Level - PAE UP3</option>
+            <option value="Working Level - MULP">Working Level - MULP</option>
+        </select>
+
+        <label for="sektor">Sektor :</label>
+        <select id="sektor" name="sektor" required>
+            <option value="" disabled selected>Pilih Level Probing</option>
+            <option value="pemerintah">Pemerintah</option>
+            <option value="bisnis">Bisnis</option>
+            <option value="industri">Industri</option>
+            <option value="sosial">Sosial</option>
+            <option value="rumah tangga - ASMAN NIAGA DAN SAR">Rumah Tangga</option>
+        </select>
+        
+        <label for="unit">Unit :</label>
+        <select id="unit" name="unit" required>
+            <option value="" disabled selected>Pilih Unit</option>
+            <option value="UID">Unit Induk Distribusi</option>
+            <option value="UP3 Pekanbaru">UP3 Pekanbaru</option>
+            <option value="UP3 Dumai">UP3 Dumai</option> 
+            <option value="UP3 Tanjungpinang">UP3 Tanjungpinang</option> 
+            <option value="UP3 Rengat">UP3 Rengat</option> 
+            <option value="UP3 Bangkinang">UP3 Bangkinang</option>
+            <option value="ULP Pekanbaru Kota Timur">ULP Pekanbaru Kota Timur</option>
+            <option value="ULP Pekanbaru Kota Barat">ULP Pekanbaru Kota Barat</option>
+            <option value="ULP Simpang Tiga">ULP Simpang Tiga</option>
+            <option value="ULP Rumbai">ULP Rumbai</option>
+            <option value="ULP Panam">ULP Panam</option>
+            <option value="ULP Perawang">ULP Perawang</option>
+            <option value="ULP Siak Sri Indrapura">ULP Siak Sri Indrapura</option>
+            <option value="ULP Pangkalan Kerinci">ULP Pangkalan Kerinci</option>
+            <option value="ULP Duri">ULP Duri</option>
+            <option value="ULP Bagan Siapi-api">ULP Bagan Siapi-api</option>
+            <option value="ULP Bengkalis">ULP Bengkalis</option>
+            <option value="ULP Selat Panjang">ULP Selat Panjang</option>
+            <option value="ULP Dumai Kota">ULP Dumai Kota</option>
+            <option value="ULP Bagan Batu">ULP Bagan Batu</option>
+            <option value="ULP Bintan Center">ULP Bintan Center</option>
+            <option value="ULP Kijang">ULP Kijang</option>
+            <option value="ULP Tanjung Uban">ULP Tanjung Uban</option>
+            <option value="ULP Belakang Padang">ULP Belakang Padang</option>
+            <option value="ULP Tanjung Balai Karimun">ULP Tanjung Balai Karimun</option>
+            <option value="ULP Tanjung Batu">ULP Tanjung Batu</option>
+            <option value="ULP Dabo Singkep">ULP Dabo Singkep</option>
+            <option value="ULP Natuna">ULP Natuna</option>
+            <option value="ULP Tanjungpinang Kota">ULP Tanjungpinang Kota</option>
+            <option value="ULP Anambas">ULP Anambas</option>
+            <option value="ULP Rengat Kota">ULP Rengat Kota</option>
+            <option value="ULP Taluk Kuantan">ULP Taluk Kuantan</option>
+            <option value="ULP Kuala Enok">ULP Kuala Enok</option>
+            <option value="ULP Tembilahan">ULP Tembilahan</option>
+            <option value="ULP Air Molek">ULP Air Molek</option>
+            <option value="ULP Bangkinang">ULP Bangkinang</option>
+            <option value="ULP Kampar">ULP Kampar</option>
+            <option value="ULP Lipat Kain">ULP Lipat Kain</option>
+            <option value="ULP Pasir Pangaraian">ULP Pasir Pangaraian</option>
+            <option value="ULP Ujung Batu">ULP Ujung Batu</option>
+        </select>
+
+        <label for="lokasi">Lokasi :</label>
+        <input type="text" id="lokasi" name="lokasi" required>
+
+        <label for="tglKunjungan">Tanggal Kunjungan :</label>
+        <input type="date" id="tglKunjungan" name="tglKunjungan" required>
+
+        <!-- kunjungan - komplain, kunjungan - profiling, selebrasi- Mou, selebrasi - PJBTL, selebrasi - energize  -->
+        <label for="tujuan">Tujuan :</label>
+        <select id="tujuan" name="tujuan" required>
+            <option value="" disabled selected>Pilih Tujuan</option>
+            <option value="Kunjungan - Probing">Kunjungan - Probing</option>
+            <option value="Kunjungan - Komplain">Kunjungan - Komplain</option>
+            <option value="Kunjungan - Profiling TM">Kunjungan - Profiling TM</option>
+            <option value="Kunjungan - Profiling TT">Kunjungan - Profiling TT</option>
+            <option value="Selebrasi - MoU">Selebrasi - MoU</option>
+            <option value="Selebrasi - PJBTL">Selebrasi - PJBTL</option>
+            <option value="Selebrasi - Energize">Selebrasi - Energize</option>
+        </select>
+
+                
+        <div id="options-container">
+            <label for="plg">Peserta Pelanggan :</label>
+            <div class="option">
+                <input type="text" placeholder="Jabatan" required>
+                <input type="text" placeholder="Nama Peserta" required>
+                <button type="button" onclick="removeOption(this)">X</button>
+            </div>
+        </div>
+        <button id="add-option" type="button">Add Option</button>
+
+        
+        <div id="options-container-pln" required>
+            <label for="pln">Peserta PLN :</label>
+            <div class="option">
+                <select required>
+                <option value="" disabled selected>Pilih Jabatan</option>
+                <option value="GM">GM</option>
+                <option value="SRM">SRM</option>
+                <option value="MUP3">MUP3</option>
+                <option value="MSB">MSB</option>
+                <option value="ASMAN">ASMAN</option>
+                <option value="PAE UID">PAE UID</option>
+                <option value="PAE UP3">PAE UP3</option>
+                <option value="TL UP3">TL UP3</option>
+                <option value="MULP">MULP</option>
+                <option value="TL ULP">TL ULP</option>
+                <option value="LAINNYA">LAINNYA</option>
+                </select>
+                <input type="text" placeholder="Nama Peserta" required>
+                <button type="button" onclick="removeOption(this)">X</button>
+            </div>
+        </div>
+        <button id="add-option-pln" type="button">Add Option</button>
+
+        <div id="issue-container">
+            <label for="isu">Isu utama yang diangkat :</label>
+            <textarea id="isu" name="isu" required></textarea>
+        </div>
+        
+        <label for="pembahasan">Pembahasan :</label>
+        <textarea id="pembahasan" name="pembahasan" required></textarea>
+
+        <label for="solusi">Potensi solusi :</label>
+        <textarea id="solusi" name="solusi" required></textarea>
+
+        <label for="rencanaTL">Rencana tindaklanjut :</label>
+        <textarea id="rencanaTL" name="rencanaTL" required></textarea>
+
+        <label for="status">Status :</label>
+        <select id="status" name="status" required>
+            <option value="" disabled selected>Select Laporan</option>
+            <option value="followup">Butuh Tindaklanjut</option>
+            <option value="no_followup">Selesai</option>
+        </select>
+
+        <div id="datePickerContainer" class="hidden">
+            <label for="followupDate">Tanggal Rencana Tindaklanjut :</label>
+            <input type="date" id="followupDate" name="followupDate">
+        </div>
+
+        <label for="photo">Upload Photo :</label>
+        <input type="file" id="photo" name="photo" accept="image/*" required>
+
+        <!-- Tempat untuk preview foto -->
+         <img id="preview" src="#" alt="Preview Photo" style="display: none;">
+
+        <button id="submitButton" type="submit">Submit</button>
+    </form>
+
+    <script>
+        const laporanSelect = document.getElementById('status');
+        const datePickerContainer = document.getElementById('datePickerContainer');
+        const photoInput = document.getElementById('photo');
+        const previewImage = document.getElementById('preview');
+        const optionsContainer = document.getElementById('options-container');
+        const addOptionButton = document.getElementById('add-option');
+        const optionsContainerPLN = document.getElementById('options-container-pln');
+        const addOptionButtonPLN = document.getElementById('add-option-pln');
+
+        function removeOption(button) {
+            button.parentElement.remove();
+        }
+
+        // Fungsi untuk menambahkan opsi baru
+        function addOption() {
+        const newOption = document.createElement('div');
+        newOption.className = 'option';
+        newOption.innerHTML = `
+            <input type="text" placeholder="Jabatan">
+            <input type="text" placeholder="Nama Peserta">
+            <button type="button" onclick="removeOption(this)">X</button>
+        `;
+        optionsContainer.appendChild(newOption);
+        }
+
+        // Event listener untuk tombol Add Option
+        addOptionButton.addEventListener('click', addOption);
+
+        function addOptionPLN() {
+        const newOption = document.createElement('div');
+        newOption.className = 'option';
+        newOption.innerHTML = `
+            <select required>
+            <option value="" disabled selected>Pilih Jabatan</option>
+            <option value="GM">GM</option>
+            <option value="SRM">SRM</option>
+            <option value="MUP3">MUP3</option>
+            <option value="MSB">MSB</option>
+            <option value="ASMAN">ASMAN</option>
+            <option value="PAE UID">PAE UID</option>
+            <option value="PAE UP3">PAE UP3</option>
+            <option value="TL UP3">TL UP3</option>
+            <option value="MULP">MULP</option>
+            <option value="TL ULP">TL ULP</option>
+            <option value="LAINNYA">LAINNYA</option>
+            </select>
+            <input type="text" placeholder="Nama Peserta">
+            <button type="button" onclick="removeOption(this)">X</button>
+        `;
+        optionsContainerPLN.appendChild(newOption);
+        }
+
+        // Event listener untuk tombol Add Option
+        addOptionButtonPLN.addEventListener('click', addOptionPLN);
+
+        laporanSelect.addEventListener('change', function(){
+            if (this.value === 'followup') {
+                datePickerContainer.classList.remove('hidden');
+            } else{
+                datePickerContainer.classList.add('hidden');
+            }
+        });
+
+        photoInput.addEventListener('change', function() {
+            const file = this.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    previewImage.src = e.target.result;
+                    previewImage.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            } else {
+                previewImage.src = '#';
+                previewImage.style.display = 'none';
+            }
+        })
+
+        document.getElementById('submissionForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            // Ambil data dari form
+            const formData = new FormData(e.target);
+            const fileInput = document.getElementById('photo');
+            const file = fileInput.files[0];
+            const laporanSelect = document.getElementById('status');
+            const statusLaporan = laporanSelect.value;
+            const statusText = document.getElementById('status').options[document.getElementById('status').selectedIndex].text;
+            const tglKunjungan = document.getElementById('tglKunjungan').value;
+            const followupDate = document.getElementById('followupDate').value;
+
+            
+
+            if (statusLaporan === 'followup' && !followupDate) {
+                alert('Silahkan pilih tanggal tindaklanjut');
+                return
+            }
+              
+
+            // Jika file tidak ada, hentikan eksekusi
+            if (!file) {
+                alert("Please upload a photo.");
+                return;
+            }
+
+            // Konversi file ke Base64
+            const reader = new FileReader();
+            reader.onloadend = async () => {
+                
+
+                const base64File = reader.result.split(',')[1]; // Ambil data Base64 tanpa prefix
+                
+                const optionsPlg = document.querySelectorAll("#options-container .option");
+                const pesertaPlg = [];
+                optionsPlg.forEach(option => {
+                    const jabatanPlg = option.querySelector("input[placeholder='Jabatan']").value; // Ambil nilai dropdown
+                    const namaPesertaPlg = option.querySelector("input[placeholder='Nama Peserta']").value; // Ambil nilai input teks
+                    if (jabatanPlg && namaPesertaPlg) {
+                        pesertaPlg.push(`${jabatanPlg} ${namaPesertaPlg}`);
+                    }
+                });
+                const pesertaPlgString = pesertaPlg.join(', ');
+                
+                const optionsPLN = document.querySelectorAll("#options-container-pln .option");
+                const pesertaPLN = [];
+                optionsPLN.forEach(option => {
+                    const jabatan = option.querySelector("select").value; // Ambil nilai dropdown
+                    const namaPeserta = option.querySelector("input[type='text']").value; // Ambil nilai input teks
+                    if (jabatan && namaPeserta) {
+                        pesertaPLN.push(`${jabatan} ${namaPeserta}`);
+                    }
+                });
+                const pesertaPLNString = pesertaPLN.join(', ');
+
+                // Tambahkan data file ke objek formData
+                const data = {
+                    stakeholder: formData.get('stakeholder'),
+                    levelProbing: formData.get('levelProbing'),
+                    unit: formData.get('unit'),
+                    lokasi: formData.get('lokasi'),
+                    tglKunjungan: tglKunjungan,
+                    tujuan: formData.get('tujuan'),
+                    plg: pesertaPlgString   ,
+                    pln: pesertaPLNString,
+                    isu: formData.get('isu'),
+                    pembahasan: formData.get('pembahasan'),
+                    solusi: formData.get('solusi'),
+                    rencanaTL: formData.get('rencanaTL'),
+                    status: statusText,
+                    tglFollowup: followupDate,
+                    photo: base64File, // Foto dalam format Base64
+                    fileName: file.name,
+                    mimeType: file.type
+                };
+                
+                // Konversi data ke JSON string
+                const jsonData = JSON.stringify(data);
+                console.log("Data sebagai JSON string:", jsonData);
+
+                // Kirim data ke Apps Script
+                try {
+                    const submitButton = document.querySelector("#submitButton")
+                    submitButton.disabled = true;
+                    const response = await fetch('https://script.google.com/macros/s/AKfycbww5Xqj_XPH9M9tZ6iRjRyLD7cE6FVn4L40h98XKDlyvFdx0vM1PCShUNJUJhH7S1O9oA/exec', { // Ganti dengan URL Web App
+                        method: 'POST',
+                        body: jsonData, // Kirim JSON string
+                    });
+                    console.log(jsonData);
+                    const result = await response.json();
+                    console.log("result", result);
+                    if (result.status === 'success') {
+                        alert('Data submitted successfully!');
+                        e.target.reset();
+                        previewImage.style.display = 'none';
+                        
+                    } else {
+                        alert('Error submitting data.');
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('Error connecting to the server.');
+                } finally {
+                    submitButton.disabled = false;
+                }
+            };
+
+            reader.readAsDataURL(file);
+        });
+    </script>
+</body>
+</html>
